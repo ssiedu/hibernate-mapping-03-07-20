@@ -11,7 +11,9 @@ public class EmpSearch {
 		Emp emp=session.get(Emp.class, 111);
 		System.out.println(emp.getEname());
 		System.out.println(emp.getSal());
-		System.out.println(emp.getLaptop().getBrand());
+		Laptop lapy=emp.getLaptop();
+		System.out.println(lapy.getBrand());
+		System.out.println(lapy.getPrice());
 		session.close();
 		
 		

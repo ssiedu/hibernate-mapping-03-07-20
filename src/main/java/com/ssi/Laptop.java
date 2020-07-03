@@ -2,6 +2,7 @@ package com.ssi;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Laptop {
@@ -9,6 +10,18 @@ public class Laptop {
 	private String lcode;
 	private String brand;
 	private int price;
+	
+	@OneToOne(mappedBy="laptop")//mappedBy="laptop" , we informed framework that we already have a mapping in Emp table for laptop (dont create extra col for this.)
+	private Emp emp;
+	
+	
+	
+	public Emp getEmp() {
+		return emp;
+	}
+	public void setEmp(Emp emp) {
+		this.emp = emp;
+	}
 	public String getLcode() {
 		return lcode;
 	}

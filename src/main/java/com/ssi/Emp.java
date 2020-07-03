@@ -3,6 +3,7 @@ package com.ssi;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -11,9 +12,12 @@ public class Emp {
 	private int eno;
 	private String ename;
 	private int sal;
+	
+	
 	@OneToOne(fetch=FetchType.EAGER)
 	private Laptop laptop;	
 	
+		
 	public Emp(int eno) {
 		super();
 		this.eno = eno;
