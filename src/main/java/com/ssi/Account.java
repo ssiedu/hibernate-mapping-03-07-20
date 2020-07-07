@@ -12,7 +12,7 @@ public class Account {
 	private int ano;
 	private String name;
 
-	@OneToMany
+	@OneToMany(mappedBy="account")
 	private List<Card> cards;
 	
 	public int getAno() {
@@ -32,6 +32,19 @@ public class Account {
 	}
 	public void setCards(List<Card> cards) {
 		this.cards = cards;
+	}
+	public Account(int ano, String name, List<Card> cards) {
+		super();
+		this.ano = ano;
+		this.name = name;
+		this.cards = cards;
+	}
+	public Account() {
+		super();
+	}
+	public Account(int ano) {
+		super();
+		this.ano = ano;
 	}
 	
 }

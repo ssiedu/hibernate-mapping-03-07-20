@@ -7,11 +7,11 @@ class CardEntry {
 
 	public static void main(String[] args) {
 		
-		Card c1=new Card("C111","Gold",50000);
-		Card c2=new Card("C112","Silver",30000);
-		Card c3=new Card("C113","Platinum",80000);
-		Card c4=new Card("C114","Gold",60000);
-		Card c5=new Card("C115","Silver",45000);
+		Card c1=new Card("C111","Gold",50000, new Account(111));
+		Card c2=new Card("C112","Silver",30000,new Account(111));
+		Card c3=new Card("C113","Platinum",80000, new Account(112));
+		Card c4=new Card("C114","Gold",60000, new Account(112));
+		Card c5=new Card("C115","Silver",45000, new Account(112));
 
 		Session session=Utility.getSF().openSession();
 		Transaction tr=session.beginTransaction();

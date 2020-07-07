@@ -11,7 +11,8 @@ public class Card {
 	private String cno;
 	private String ctype;
 	private int lim;
-	
+	@ManyToOne
+	private Account account;
 	
 	public Card() {
 		super();
@@ -25,6 +26,14 @@ public class Card {
 		this.cno = cno;
 		this.ctype = ctype;
 		this.lim = lim;
+	}
+	
+	public Card(String cno, String ctype, int lim, Account account) {
+		super();
+		this.cno = cno;
+		this.ctype = ctype;
+		this.lim = lim;
+		this.account = account;
 	}
 	public String getCno() {
 		return cno;
@@ -47,6 +56,12 @@ public class Card {
 	@Override
 	public String toString() {
 		return "Card [cno=" + cno + ", ctype=" + ctype + ", lim=" + lim + "]";
+	}
+	public Account getAccount() {
+		return account;
+	}
+	public void setAccount(Account account) {
+		this.account = account;
 	}
 	
 	
